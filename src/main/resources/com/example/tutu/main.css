@@ -1,0 +1,38 @@
+#but {
+    -fx-text-fill: pink;
+}
+
+.back {
+    -fx-padding: 30px 20px 30px 20px;
+    -fx-background-radius: 30px;
+    -fx-background-color: #FFB085;
+}
+
+#full {
+    -fx-background-color: #FEF1E6;
+}
+
+Button {
+    -fx-padding: 6px 4px 6px 4px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #F9D5A7;
+    -fx-transition: -fx-background-color: ease-in-out 0.2s;
+}
+
+Button:hover {
+    -fx-background-color: #FEF1E6;
+}
+
+Button:pressed {
+    fx-background-color: red;
+}
+
+#tit {
+    -fx-border-style: solid;
+    -fx-border-color: #FEF1E6;
+    -fx-border-width: 7px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 30px;
+    -fx-background-color: #FFB085;
+    -fx padding: 10px 20px 10px 20px;
+}
