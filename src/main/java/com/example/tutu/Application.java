@@ -23,21 +23,11 @@ public class Application extends javafx.application.Application {
 
         Image icon = new Image("C:\\Users\\HP\\IdeaProjects\\Tutu\\src\\cat.jpg");
 
-        Text text = new Text();
-        text.setText("Tutu is best cat.");
-        text.setX(50);
-        text.setY(50);
-        text.setFont(Font.font("Verdana",50));
-        text.setFill(Color.DARKGREEN);
-
-        //root.getChildren().add(text);
-
         stage.setScene(scene);
         stage.setTitle("Tutu!");
         stage.getIcons().add(icon);
         stage.setWidth(1200);
         stage.setHeight(800);
-        //stage.setFullScreen(true);
         stage.setResizable(false);
         stage.show();
     }

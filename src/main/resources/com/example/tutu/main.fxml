@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.SceneController">
    <children>
       <Label alignment="CENTER" layoutX="328.0" layoutY="38.0" styleClass="back" text="CPU Benchmarking" textAlignment="CENTER">
          <font>
@@ -32,7 +32,7 @@
             <RowConstraints maxHeight="217.2666687011719" minHeight="10.0" prefHeight="129.06664428710934" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToDigits" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Cooper Black" size="24.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" styleClass="cuteButton" text="Floating Point" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#switchToFloating" styleClass="cuteButton" text="Floating Point" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Cooper Black" size="24.0" />
                </font>

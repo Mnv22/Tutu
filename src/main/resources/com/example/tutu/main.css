@@ -36,3 +36,9 @@ Button:pressed {
     -fx-background-color: #FFB085;
     -fx padding: 10px 20px 10px 20px;
 }
+
+.round {
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-background-color: #F9D5A7;
+}
