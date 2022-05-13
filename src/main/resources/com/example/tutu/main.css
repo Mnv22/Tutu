@@ -16,7 +16,6 @@ Button {
     -fx-padding: 6px 4px 6px 4px;
     -fx-background-radius: 10px;
     -fx-background-color: #F9D5A7;
-    -fx-transition: -fx-background-color: ease-in-out 0.2s;
 }
 
 Button:hover {
@@ -41,4 +40,14 @@ Button:pressed {
     -fx-border-radius: 50%;
     -fx-background-radius: 50%;
     -fx-background-color: #F9D5A7;
+}
+
+.round2 {
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-background-color: #F9D5A7;
+}
+
+.round:hover {
+    -fx-background-color: #FEF1E6;
 }
