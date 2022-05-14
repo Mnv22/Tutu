@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.SceneController">
+<AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.Menu">
    <children>
       <Label alignment="CENTER" layoutX="328.0" layoutY="38.0" styleClass="back" text="CPU Benchmarking" textAlignment="CENTER">
          <font>
@@ -32,7 +32,7 @@
             <RowConstraints maxHeight="217.2666687011719" minHeight="10.0" prefHeight="129.06664428710934" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToDigits" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="button_DigitsOfPi" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToDigits" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Cooper Black" size="24.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#switchToFloating" styleClass="cuteButton" text="Floating Point" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="button_FloatingPoint" mnemonicParsing="false" onAction="#switchToFloating" styleClass="cuteButton" text="Floating Point" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Cooper Black" size="24.0" />
                </font>
@@ -79,49 +79,22 @@
                   <Font name="Cooper Black" size="74.0" />
                </font>
             </Label>
+            <Button fx:id="button_Results" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToResults" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Results">
+               <font>
+                  <Font name="Cooper Black" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="11.64" offsetX="3.0" offsetY="6.0" radius="5.32" spread="0.04" width="11.64">
+                     <color>
+                        <Color opacity="0.44999998807907104" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
-      <GridPane layoutX="552.0" layoutY="636.0" prefHeight="98.0" prefWidth="528.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Results">
-               <font>
-                  <Font name="Cooper Black" size="24.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="GAUSSIAN" height="11.64" offsetX="3.0" offsetY="6.0" radius="5.32" spread="0.04" width="11.64">
-                     <color>
-                        <Color opacity="0.44999998807907104" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="159.0" styleClass="cuteButton" text="Stop" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
-               <font>
-                  <Font name="Cooper Black" size="24.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="GAUSSIAN" height="11.64" offsetX="3.0" offsetY="6.0" radius="5.32" spread="0.04" width="11.64">
-                     <color>
-                        <Color opacity="0.44999998807907104" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </GridPane>
    </children>
 </AnchorPane>

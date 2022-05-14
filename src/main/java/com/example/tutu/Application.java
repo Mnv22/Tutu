@@ -10,18 +10,22 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Application extends javafx.application.Application {
-    @Override
-    public void start(Stage stage) throws IOException {
+    private static Stage stg;
 
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        stg=stage;
+        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 
         //Group root = new Group();
         Scene scene = new Scene(root, Color.CORAL);
         scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
 
-        Image icon = new Image("C:\\Users\\HP\\IdeaProjects\\Tutu\\src\\cat.jpg");
+        Image icon = new Image("file:src/main/resources/Images/cat.jpg");
 
         stage.setScene(scene);
         stage.setTitle("Tutu!");
@@ -30,6 +34,12 @@ public class Application extends javafx.application.Application {
         stage.setHeight(800);
         stage.setResizable(false);
         stage.show();
+    }
+
+    public void changeScene(String fxml) throws IOException{
+        Parent pane= FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
+        stg.getScene().setRoot(pane);
+
     }
 
     public static void main(String[] args) {
