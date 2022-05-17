@@ -1,13 +1,23 @@
 package com.example.tutu;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import com.example.tutu.benchmark.benchmark_PI_GL;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Digits {
+public class Digits implements Initializable {
+
+   ObservableList<String> digits = FXCollections.observableArrayList("1000","5000","10000");
 
     @FXML
     private Button button_Stop;
@@ -19,33 +29,73 @@ public class Digits {
     private Button button_Back;
     @FXML
     private Label label_GL;
+    @FXML
+    private Label label_MC;
+    @FXML
+    private ChoiceBox<String> choice_Digits;
+
+    benchmark_PI_GL bench= new benchmark_PI_GL();
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        choice_Digits.setItems(digits);
+        choice_Digits.setValue("1000");
+    }
 
     @FXML
     public void switchToMain (ActionEvent event) throws IOException {
     Application app=new Application();
     app.changeScene("Menu.fxml");
-    /*
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
-        stage.setScene(scene);
-        stage.show();
-
-     */
     }
 
     @FXML
-    public void stop(ActionEvent event) throws IOException {}
+    public void stop(ActionEvent event) throws IOException {
+        bench.stop();
+        label_GL.setText("Cancelled");
+    }
 
     @FXML
-    public void benchmarkGaussLegendre(ActionEvent event) throws IOException{}
+    public void benchmarkGaussLegendre(ActionEvent event) throws IOException{
+        int digits;
+        String choice=choice_Digits.getValue();
+        if(choice.equals("1000"))
+            digits=1000;
+        else if(choice.equals("5000"))
+            digits=5000;
+        else
+            digits=10000;
+
+
+        long miliseconds=bench.run(digits);
+        label_GL.setText(Long.toString(miliseconds));
+    }
 
     @FXML
-    public void benchmarkMonteCarlo(ActionEvent event) throws IOException{}
+    public void benchmarkMonteCarlo(ActionEvent event) throws IOException{
+        Application app=new Application();
+        app.changeScene("Menu.fxml");
+    }
 
     @FXML
-    public  void describeGL(ActionEvent event) throws IOException{
+    public  void describeGL(MouseEvent event) throws IOException{
         label_GL.setText("It is notable for being rapidly convergent, with only 25 iterations producing 45 million correct digits of π. However, the drawback is that it is computer memory-intensive");
     }
+
+    @FXML
+    public void clearGL(MouseEvent event) throws  IOException{
+        label_GL.setText("");
+    }
+
+
+    @FXML
+    public  void describeMC(MouseEvent event) throws IOException{
+        label_MC.setText("Describe Monte Carlo algorithm or whatever other algorithm we choose to do");
+    }
+
+    @FXML
+    public void clearMC(MouseEvent event) throws  IOException{
+        label_MC.setText("");
+    }
+
 }

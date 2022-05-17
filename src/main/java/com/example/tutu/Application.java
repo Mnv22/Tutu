@@ -21,7 +21,6 @@ public class Application extends javafx.application.Application {
         stg=stage;
         Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 
-        //Group root = new Group();
         Scene scene = new Scene(root, Color.CORAL);
         scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
 

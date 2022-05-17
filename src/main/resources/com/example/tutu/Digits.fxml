@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,46 +11,22 @@
 
 <AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.Digits">
    <children>
-      <Label alignment="CENTER" layoutX="465.0" layoutY="55.0" styleClass="back" text="Digits of Pi" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="447.0" layoutY="55.0" styleClass="back" text="Digits of Pi" textAlignment="CENTER">
          <font>
             <Font name="Cooper Black" size="48.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="509.0" layoutY="401.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Label layoutX="-1.0" layoutY="1.0" prefHeight="200.0" prefWidth="202.0" styleClass="round2" text="Choose your mewthod" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Cooper Black" size="26.0" />
-               </font>
-            </Label>
-            <Button fx:id="button_GL" layoutX="-5.0" layoutY="-93.0" mnemonicParsing="false" onAction="#benchmarkGaussLegendre" prefHeight="86.0" prefWidth="98.0" styleClass="round" text="Gauss- Legendre" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Cooper Black" size="16.0" />
-               </font>
-               <effect>
-                  <DropShadow height="11.0" offsetX="6.0" offsetY="3.0" radius="5.0" width="11.0">
-                     <color>
-                        <Color opacity="0.5" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </AnchorPane>
-      <Button layoutX="718.0" layoutY="395.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
+      <Button layoutX="709.0" layoutY="439.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="411.0" layoutY="395.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
+      <Button layoutX="402.0" layoutY="439.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="button_MC" layoutX="628.0" layoutY="309.0" mnemonicParsing="false" onAction="#benchmarkMonteCarlo" prefHeight="86.0" prefWidth="98.0" styleClass="round" text="Monte Carlo" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="button_MC" layoutX="611.0" layoutY="354.0" mnemonicParsing="false" onAction="#benchmarkMonteCarlo" onMouseEntered="#describeMC" onMouseExited="#clearMC" prefHeight="86.0" prefWidth="98.0" styleClass="round" text="Monte Carlo" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
@@ -64,7 +41,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button_Back" layoutX="137.0" layoutY="606.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="86.0" prefWidth="90.0" styleClass="round" text="Go back" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="button_Back" layoutX="96.0" layoutY="630.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="86.0" prefWidth="90.0" styleClass="round" text="Go back" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
@@ -79,7 +56,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button_Stop" alignment="CENTER" contentDisplay="CENTER" layoutX="530.0" layoutY="606.0" mnemonicParsing="false" onAction="#stop" prefHeight="37.0" prefWidth="159.0" styleClass="cuteButton" text="Stop">
+      <Button fx:id="button_Start" alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="650.0" mnemonicParsing="false" onAction="#stop" prefHeight="37.0" prefWidth="159.0" styleClass="cuteButton" text="Stop">
          <font>
             <Font name="Cooper Black" size="24.0" />
          </font>
@@ -94,9 +71,40 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="label_GL" layoutX="74.0" layoutY="184.0" onMouseEntered="#describeGL" prefHeight="262.0" prefWidth="319.0">
+      <Label fx:id="label_GL" layoutX="48.0" layoutY="190.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
          <font>
-            <Font size="7.0" />
+            <Font name="Cooper Black" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_MC" layoutX="832.0" layoutY="192.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Cooper Black" size="26.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choice_Digits" layoutX="487.0" layoutY="270.0" prefHeight="34.0" prefWidth="225.0" />
+      <Label layoutX="500.0" layoutY="444.0" prefHeight="200.0" prefWidth="202.0" styleClass="round2" text="Choose your mewthod" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Cooper Black" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_GL" layoutX="492.0" layoutY="353.0" mnemonicParsing="false" onAction="#benchmarkGaussLegendre" onMouseEntered="#describeGL" onMouseExited="#clearGL" prefHeight="86.0" prefWidth="98.0" styleClass="round" text="Gauss- Legendre" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Cooper Black" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow height="11.0" offsetX="6.0" offsetY="3.0" radius="5.0" width="11.0">
+               <color>
+                  <Color opacity="0.5" />
+               </color>
+            </DropShadow>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="472.0" layoutY="196.0" prefHeight="74.0" prefWidth="257.0" text="Choose the number of computed digits:" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Cooper Black" size="26.0" />
          </font>
       </Label>
    </children>

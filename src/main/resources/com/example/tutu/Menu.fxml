@@ -74,7 +74,7 @@
       </Label>
       <AnchorPane layoutX="534.0" layoutY="276.0" prefHeight="318.0" prefWidth="542.0" styleClass="back">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="24.0" prefHeight="274.0" prefWidth="499.0" text="Put Cuteness Here" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="label_Cuteness" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="24.0" prefHeight="274.0" prefWidth="499.0" text="Put Cuteness Here" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Cooper Black" size="74.0" />
                </font>
