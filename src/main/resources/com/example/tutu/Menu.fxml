@@ -47,9 +47,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="button_FloatingPoint" mnemonicParsing="false" onAction="#switchToFloating" styleClass="cuteButton" text="Floating Point" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="button_FixedPoint" mnemonicParsing="false" onAction="#benchmark_FixedPoint" prefWidth="222.0" styleClass="cuteButton" text="Fixed Point Arithmetics" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
-                  <Font name="Cooper Black" size="24.0" />
+                  <Font name="Cooper Black" size="20.0" />
                </font>
                <effect>
                   <DropShadow height="11.0" offsetX="3.0" offsetY="6.0" radius="5.0" width="11.0">
