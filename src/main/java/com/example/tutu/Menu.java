@@ -8,6 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import com.example.tutu.benchmark.benchmark_FP;
 
@@ -26,7 +30,8 @@ public class Menu {
 
     benchmark_FP bench=new benchmark_FP();
 
-    public Menu(){}
+    public Menu(){
+    }
 
 
 
@@ -79,5 +84,23 @@ public class Menu {
         label_Cuteness.setText(Double.toString(MOPS));
 
     }
-    
+
+    @FXML
+    public  void describeDP(MouseEvent event) throws IOException{
+        label_Cuteness.setFont(new Font("Cooper Black",35));
+        label_Cuteness.setText("This benchmark tries to stress the CPU by computing a large number of digits of the transcendental number PI, using a spigot algorithm.");
+    }
+
+    @FXML
+    public  void describeFP(MouseEvent event) throws IOException{
+        label_Cuteness.setFont(new Font("Cooper Black",35));
+        label_Cuteness.setText("This benchmark method will run the integer arithmetic test: it uses a wide array of operators between multiple local variables.");
+    }
+
+
+    @FXML
+    public void clear(MouseEvent event) throws  IOException{
+        label_Cuteness.setFont(new Font("Cooper Black",74));
+        label_Cuteness.setText("Put Cuteness Here");
+    }
 }

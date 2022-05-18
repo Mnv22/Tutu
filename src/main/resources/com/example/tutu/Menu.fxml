@@ -32,7 +32,7 @@
             <RowConstraints maxHeight="217.2666687011719" minHeight="10.0" prefHeight="129.06664428710934" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="button_DigitsOfPi" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToDigits" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="button_DigitsOfPi" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToDigits" onDragEntered="#describeDP" onDragExited="#clear" onMouseEntered="#describeDP" onMouseExited="#clear" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Cooper Black" size="24.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="button_FixedPoint" mnemonicParsing="false" onAction="#benchmark_FixedPoint" prefWidth="222.0" styleClass="cuteButton" text="Fixed Point Arithmetics" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="button_FixedPoint" mnemonicParsing="false" onAction="#benchmark_FixedPoint" onMouseEntered="#describeFP" onMouseExited="#clear" prefWidth="222.0" styleClass="cuteButton" text="Fixed Point Arithmetics" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Cooper Black" size="20.0" />
                </font>
