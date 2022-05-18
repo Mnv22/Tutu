@@ -24,7 +24,7 @@ public class Application extends javafx.application.Application {
         Scene scene = new Scene(root, Color.CORAL);
         scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
 
-        Image icon = new Image("file:src/main/resources/Images/cat.jpg");
+        Image icon = new Image("file:src/main/resources/Images/cat.png");
 
         stage.setScene(scene);
         stage.setTitle("Tutu!");

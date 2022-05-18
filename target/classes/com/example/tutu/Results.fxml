@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.Results">
+   <children>
+      <AnchorPane layoutX="-30.0" layoutY="547.0" prefHeight="456.0" prefWidth="226.0" rotate="-55.3" styleClass="back" />
+      <Label alignment="CENTER" layoutX="489.0" layoutY="54.0" styleClass="back" text="Results" textAlignment="CENTER">
+         <font>
+            <Font name="Cooper Black" size="48.0" />
+         </font>
+      </Label>
+      <Button id="bord" fx:id="button_Back" layoutX="96.0" layoutY="629.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="86.0" prefWidth="90.0" styleClass="round" text="Go back" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Cooper Black" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <AnchorPane layoutX="971.0" layoutY="563.0" prefHeight="456.0" prefWidth="226.0" rotate="55.3" styleClass="back" />
+   </children>
+</AnchorPane>

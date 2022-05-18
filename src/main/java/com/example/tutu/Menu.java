@@ -3,6 +3,7 @@ package com.example.tutu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,6 +28,10 @@ public class Menu {
     private Button button_Results;
     @FXML
     private Label label_Cuteness;
+    @FXML
+    private ImageView cat;
+    @FXML
+    private Label labelResult;
 
     benchmark_FP bench=new benchmark_FP();
 
@@ -54,53 +59,47 @@ public class Menu {
     }
 
     @FXML
-    public void switchToResults (ActionEvent event) throws IOException {
+    public void switchToResults (ActionEvent event) throws IOException{
 
         Application app=new Application();
-        app.changeScene("Digits.fxml");
-        /*Parent root = FXMLLoader.load(getClass().getResource("Digits.fxml"));
+        app.changeScene("Results.fxml");
+        /*Parent root = FXMLLoader.load(getClass().getResource("Results.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
         stage.setScene(scene);
         stage.show();*/
     }
 
-    /*@FXML
-    public void switchToFloating (ActionEvent event) throws IOException{
-
-        Parent root = FXMLLoader.load(getClass().getResource("Floating.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
-        stage.setScene(scene);
-        stage.show();
-    }*/
-
     @FXML
-    public void benchmark_FixedPoint() throws IOException{
+    public void benchmark_FixedPoint() throws IOException, InterruptedException {
         double MOPS= bench.run();
-        label_Cuteness.setText(Double.toString(MOPS));
+        labelResult.setId("id2");
+        labelResult.setText("Score: " + Double.toString(MOPS));
+        labelResult.setAlignment(Pos.CENTER);
+        cat.setId("id");
 
     }
 
     @FXML
     public  void describeDP(MouseEvent event) throws IOException{
-        label_Cuteness.setFont(new Font("Cooper Black",35));
+        cat.setId("id");
+        label_Cuteness.setFont(new Font("Cooper Black",30));
         label_Cuteness.setText("This benchmark tries to stress the CPU by computing a large number of digits of the transcendental number PI, using a spigot algorithm.");
     }
 
     @FXML
     public  void describeFP(MouseEvent event) throws IOException{
-        label_Cuteness.setFont(new Font("Cooper Black",35));
+        cat.setId("id");
+        label_Cuteness.setFont(new Font("Cooper Black",30));
         label_Cuteness.setText("This benchmark method will run the integer arithmetic test: it uses a wide array of operators between multiple local variables.");
     }
 
 
     @FXML
     public void clear(MouseEvent event) throws  IOException{
+        cat.setId("id2");
         label_Cuteness.setFont(new Font("Cooper Black",74));
-        label_Cuteness.setText("Put Cuteness Here");
+        label_Cuteness.setText("");
     }
 }

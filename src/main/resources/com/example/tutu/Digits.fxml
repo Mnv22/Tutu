@@ -5,11 +5,13 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.Digits">
+<AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.Digits">
    <children>
       <AnchorPane layoutX="-30.0" layoutY="547.0" prefHeight="456.0" prefWidth="226.0" rotate="-55.3" styleClass="back" />
       <Label alignment="CENTER" layoutX="447.0" layoutY="55.0" styleClass="back" text="Digits of Pi" textAlignment="CENTER">
@@ -76,9 +78,9 @@
          </font>
       </Label>
       <ChoiceBox fx:id="choice_Digits" layoutX="487.0" layoutY="270.0" prefHeight="34.0" prefWidth="225.0" />
-      <Label layoutX="500.0" layoutY="444.0" prefHeight="200.0" prefWidth="202.0" styleClass="round2" text="Choose your mewthod" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="500.0" layoutY="444.0" prefHeight="200.0" prefWidth="202.0" styleClass="round2" text="Choose your mewthod" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
          <font>
-            <Font name="Cooper Black" size="26.0" />
+            <Font name="Cooper Black" size="18.0" />
          </font>
       </Label>
       <Button fx:id="button_GL" layoutX="492.0" layoutY="353.0" mnemonicParsing="false" onAction="#benchmarkGaussLegendre" onMouseEntered="#describeGL" onMouseExited="#clearGL" prefHeight="86.0" prefWidth="98.0" styleClass="round" text="Gauss- Legendre" textAlignment="CENTER" wrapText="true">
@@ -102,5 +104,15 @@
          </font>
       </Label>
       <AnchorPane layoutX="971.0" layoutY="563.0" prefHeight="456.0" prefWidth="226.0" rotate="55.3" styleClass="back" />
+      <ImageView fx:id="cat" fitHeight="286.0" fitWidth="382.0" layoutX="409.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/loading.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="paw" layoutX="556.0" layoutY="519.0" prefHeight="50.0" prefWidth="90.0" text="Choose your meowthod" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Cooper Black" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

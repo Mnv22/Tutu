@@ -1,15 +1,19 @@
 package com.example.tutu;
 
+import com.example.tutu.benchmark.logger.TimeUnit;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import com.example.tutu.benchmark.benchmark_PI_GL;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +37,10 @@ public class Digits implements Initializable {
     private Label label_MC;
     @FXML
     private ChoiceBox<String> choice_Digits;
+    @FXML
+    private ImageView cat;
+    @FXML
+    private Label paw;
 
     benchmark_PI_GL bench= new benchmark_PI_GL();
 
@@ -56,7 +64,9 @@ public class Digits implements Initializable {
     }
 
     @FXML
-    public void benchmarkGaussLegendre(ActionEvent event) throws IOException{
+    public void benchmarkGaussLegendre(ActionEvent event) throws IOException, InterruptedException {
+        paw.setText("Loading...");
+
         int digits;
         String choice=choice_Digits.getValue();
         if(choice.equals("1000"))
@@ -68,7 +78,9 @@ public class Digits implements Initializable {
 
 
         long miliseconds=bench.run(digits);
-        label_GL.setText(Long.toString(miliseconds));
+        paw.setText(Long.toString(miliseconds));
+        paw.setFont(new Font("Cooper Black",30));
+        paw.setAlignment(Pos.CENTER);
     }
 
     @FXML

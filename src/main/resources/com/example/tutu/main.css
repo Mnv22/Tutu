@@ -26,7 +26,7 @@ Button:pressed {
     fx-background-color: red;
 }
 
-#tit {
+.tit {
     -fx-border-style: solid;
     -fx-border-color: #FEF1E6;
     -fx-border-width: 7px;
@@ -65,4 +65,12 @@ ChoiceBox {
 
 ChoiceBox:hover {
     -fx-background-color: #F9D5A7;
+}
+
+#id {
+    visibility: hidden;
+}
+
+#id2 {
+    visibility: visibility;
 }
