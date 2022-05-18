@@ -51,3 +51,18 @@ Button:pressed {
 .round:hover {
     -fx-background-color: #FEF1E6;
 }
+
+#bord {
+    -fx-border-style: solid;
+    -fx-border-color: #FEF1E6;
+    -fx-border-width: 7px;
+}
+
+ChoiceBox {
+    -fx-background-color: #FFB085;
+    -fx-font-family: "Cooper Black";
+}
+
+ChoiceBox:hover {
+    -fx-background-color: #F9D5A7;
+}

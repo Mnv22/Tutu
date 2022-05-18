@@ -48,6 +48,20 @@ public class Menu {
         stage.show();*/
     }
 
+    @FXML
+    public void switchToResults (ActionEvent event) throws IOException {
+
+        Application app=new Application();
+        app.changeScene("Digits.fxml");
+        /*Parent root = FXMLLoader.load(getClass().getResource("Digits.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();*/
+    }
+
     /*@FXML
     public void switchToFloating (ActionEvent event) throws IOException{
 
@@ -65,9 +79,5 @@ public class Menu {
         label_Cuteness.setText(Double.toString(MOPS));
 
     }
-
-    @FXML
-    public void switchToResults(ActionEvent event) throws IOException{}
-
-
+    
 }

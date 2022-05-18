@@ -79,22 +79,22 @@
                   <Font name="Cooper Black" size="74.0" />
                </font>
             </Label>
-            <Button fx:id="button_Results" alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToResults" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Results">
-               <font>
-                  <Font name="Cooper Black" size="24.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="GAUSSIAN" height="11.64" offsetX="3.0" offsetY="6.0" radius="5.32" spread="0.04" width="11.64">
-                     <color>
-                        <Color opacity="0.44999998807907104" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
          </children>
       </AnchorPane>
+      <Button fx:id="button_Results" alignment="CENTER" contentDisplay="CENTER" layoutX="721.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToResults" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Results">
+         <font>
+            <Font name="Cooper Black" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="11.64" offsetX="3.0" offsetY="6.0" radius="5.32" spread="0.04" width="11.64">
+               <color>
+                  <Color opacity="0.44999998807907104" />
+               </color>
+            </DropShadow>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
