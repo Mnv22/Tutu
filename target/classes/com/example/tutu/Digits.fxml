@@ -67,17 +67,17 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="label_GL" layoutX="48.0" layoutY="190.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="label_GL" layoutX="23.0" layoutY="191.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="26.0" />
          </font>
       </Label>
-      <Label fx:id="label_MC" layoutX="832.0" layoutY="192.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="label_MC" layoutX="854.0" layoutY="191.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="26.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choice_Digits" layoutX="487.0" layoutY="270.0" prefHeight="34.0" prefWidth="225.0" />
+      <ChoiceBox fx:id="choice_Digits" layoutX="360.0" layoutY="270.0" prefHeight="34.0" prefWidth="225.0" />
       <Label layoutX="500.0" layoutY="444.0" prefHeight="200.0" prefWidth="202.0" styleClass="round2" text="Choose your mewthod" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
          <font>
             <Font name="Cooper Black" size="18.0" />
@@ -114,5 +114,6 @@
             <Font name="Cooper Black" size="14.0" />
          </font>
       </Label>
+      <ChoiceBox fx:id="choice_Points" layoutX="597.0" layoutY="270.0" prefHeight="34.0" prefWidth="225.0" />
    </children>
 </AnchorPane>

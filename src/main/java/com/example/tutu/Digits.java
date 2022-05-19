@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import com.example.tutu.benchmark.benchmark_PI_GL;
+import com.example.tutu.benchmark.benchmark_PI_MC;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
@@ -21,7 +22,8 @@ import java.util.ResourceBundle;
 
 public class Digits implements Initializable {
 
-   ObservableList<String> digits = FXCollections.observableArrayList("1000","5000","10000");
+    ObservableList<String> digits = FXCollections.observableArrayList("1000","5000","10000");
+    ObservableList<String> points = FXCollections.observableArrayList("100000","1000000","999999999");
 
     @FXML
     private Button button_Stop;
@@ -38,17 +40,22 @@ public class Digits implements Initializable {
     @FXML
     private ChoiceBox<String> choice_Digits;
     @FXML
+    private ChoiceBox<String> choice_Points;
+    @FXML
     private ImageView cat;
     @FXML
     private Label paw;
 
     benchmark_PI_GL bench= new benchmark_PI_GL();
 
+    benchmark_PI_MC benchMC= new benchmark_PI_MC();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         choice_Digits.setItems(digits);
         choice_Digits.setValue("1000");
+        choice_Points.setItems(points);
+        choice_Points.setValue("100000");
     }
 
     @FXML
@@ -84,9 +91,21 @@ public class Digits implements Initializable {
     }
 
     @FXML
-    public void benchmarkMonteCarlo(ActionEvent event) throws IOException{
-        Application app=new Application();
-        app.changeScene("Menu.fxml");
+    public void benchmarkMonteCarlo(ActionEvent event) throws IOException, InterruptedException {
+
+        int points;
+        String choice= choice_Points.getValue();
+        if(choice.equals("100000"))
+            points=100000;
+        else if(choice.equals("1000000"))
+            points=1000000;
+        else
+            points=999999999;
+
+        long miliseconds=benchMC.run(points);
+        paw.setText(Long.toString(miliseconds));
+        paw.setFont(new Font("Cooper Black",30));
+        paw.setAlignment(Pos.CENTER);
     }
 
     @FXML
@@ -102,7 +121,7 @@ public class Digits implements Initializable {
 
     @FXML
     public  void describeMC(MouseEvent event) throws IOException{
-        label_MC.setText("Describe Monte Carlo algorithm or whatever other algorithm we choose to do");
+        label_MC.setText("Monte Carlo method is a multiple probability simulation, used to estimate possible outcomes by generating multiple points in an area. The result is more accurate with the more points are generated.");
     }
 
     @FXML
