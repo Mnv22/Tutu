@@ -76,12 +76,14 @@ public class Digits implements Initializable {
     @FXML
     public void benchmarkGaussLegendre(ActionEvent event) throws IOException, InterruptedException {
         paw.setText("Loading...");
+        Results results = new Results();
 
         int digits = Integer.parseInt(no_of_digits.getText().toString());
 
         long miliseconds=bench.run(digits);
 
         paw.setText(Long.toString(miliseconds));
+        results.writeResults(Long.toString(miliseconds),"src/resultsDigits.txt");
         paw.setFont(new Font("Cooper Black",30));
         paw.setAlignment(Pos.CENTER);
     }
@@ -91,11 +93,13 @@ public class Digits implements Initializable {
 
 
         int points = Integer.parseInt(no_of_points.getText().toString());
+        Results results = new Results();
 
 
 
         long miliseconds=benchMC.run(points);
         paw.setText(Long.toString(miliseconds));
+        results.writeResults(Long.toString(miliseconds),"src/resultsDigits.txt");
         paw.setFont(new Font("Cooper Black",30));
         paw.setAlignment(Pos.CENTER);
     }

@@ -62,7 +62,7 @@ public class Menu {
     public void switchToResults (ActionEvent event) throws IOException{
 
         Application app=new Application();
-        app.changeScene("Results.fxml");
+        app.changetoResult(event);
         /*Parent root = FXMLLoader.load(getClass().getResource("Results.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -73,9 +73,11 @@ public class Menu {
 
     @FXML
     public void benchmark_FixedPoint() throws IOException, InterruptedException {
+        Results results = new Results();
         double MOPS= bench.run();
         labelResult.setId("id2");
         labelResult.setText("Score: " + Double.toString(MOPS));
+        results.writeResults(Double.toString(MOPS),"src/resultsFixed.txt");
         labelResult.setAlignment(Pos.CENTER);
         cat.setId("id");
 

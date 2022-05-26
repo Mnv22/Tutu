@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.Results">
    <children>
+      <AnchorPane layoutX="880.0" layoutY="228.0" prefHeight="343.0" prefWidth="80.0" styleClass="back" />
+      <AnchorPane layoutX="232.0" layoutY="228.0" prefHeight="343.0" prefWidth="80.0" styleClass="back" />
       <AnchorPane layoutX="-30.0" layoutY="547.0" prefHeight="456.0" prefWidth="226.0" rotate="-55.3" styleClass="back" />
-      <Label alignment="CENTER" layoutX="489.0" layoutY="54.0" styleClass="back" text="Results" textAlignment="CENTER">
-         <font>
-            <Font name="Cooper Black" size="48.0" />
-         </font>
-      </Label>
       <Button id="bord" fx:id="button_Back" layoutX="96.0" layoutY="629.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="86.0" prefWidth="90.0" styleClass="round" text="Go back" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
@@ -25,7 +29,7 @@
          </cursor>
       </Button>
       <AnchorPane layoutX="971.0" layoutY="563.0" prefHeight="456.0" prefWidth="226.0" rotate="55.3" styleClass="back" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="610.0" layoutY="608.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Fixed Point">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="610.0" layoutY="608.0" mnemonicParsing="false" onAction="#resultsFixed" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Fixed Point">
          <font>
             <Font name="Cooper Black" size="24.0" />
          </font>
@@ -40,7 +44,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="608.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="608.0" mnemonicParsing="false" onAction="#resultsDigits" prefHeight="37.0" prefWidth="168.0" styleClass="cuteButton" text="Digits of Pi">
          <font>
             <Font name="Cooper Black" size="24.0" />
          </font>
@@ -55,34 +59,37 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <AnchorPane layoutX="208.0" layoutY="204.0" prefHeight="382.0" prefWidth="772.0" styleClass="back">
+      <ScrollPane fx:id="scroll" layoutX="265.0" layoutY="228.0" prefHeight="343.0" prefWidth="668.0" styleClass="back">
+         <content>
+            <Label fx:id="results" alignment="CENTER" prefWidth="589.0" text="Label" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Cooper Black" size="40.0" />
+               </font>
+            </Label>
+         </content>
+      </ScrollPane>
+      <GridPane layoutX="-3.0" layoutY="80.0" prefHeight="30.0" prefWidth="1200.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label layoutX="359.0" layoutY="37.0" text="100">
+            <Label fx:id="title" alignment="CENTER" prefHeight="116.0" styleClass="back" text="Results" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
-                  <Font name="Cooper Black" size="30.0" />
+                  <Font name="Cooper Black" size="48.0" />
                </font>
-            </Label>
-            <Label layoutX="368.0" layoutY="101.0" text="90">
-               <font>
-                  <Font name="Cooper Black" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="368.0" layoutY="167.0" text="67">
-               <font>
-                  <Font name="Cooper Black" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="368.0" layoutY="226.0" text="32">
-               <font>
-                  <Font name="Cooper Black" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="368.0" layoutY="303.0" text="22">
-               <font>
-                  <Font name="Cooper Black" size="30.0" />
-               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
             </Label>
          </children>
-      </AnchorPane>
+      </GridPane>
+      <ImageView id="id2" fx:id="cat" fitHeight="239.0" fitWidth="766.0" layoutX="383.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/drum.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
