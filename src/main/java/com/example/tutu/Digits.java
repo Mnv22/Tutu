@@ -1,8 +1,5 @@
 package com.example.tutu;
 
-import com.example.tutu.benchmark.logger.TimeUnit;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +9,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import com.example.tutu.benchmark.benchmark_PI_GL;
 import com.example.tutu.benchmark.benchmark_PI_MC;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
@@ -20,10 +18,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class Digits implements Initializable {
 
-    ObservableList<String> digits = FXCollections.observableArrayList("1000","5000","10000");
-    ObservableList<String> points = FXCollections.observableArrayList("100000","1000000","999999999");
+    //ObservableList<String> digits = FXCollections.observableArrayList("1000","5000","10000");
+   // ObservableList<String> points = FXCollections.observableArrayList("100000","1000000","999999999");
 
     @FXML
     private Button button_Stop;
@@ -46,16 +45,20 @@ public class Digits implements Initializable {
     @FXML
     private Label paw;
 
+    @FXML
+    private TextField no_of_points;
+
+    @FXML
+    private TextField no_of_digits;
+
     benchmark_PI_GL bench= new benchmark_PI_GL();
 
     benchmark_PI_MC benchMC= new benchmark_PI_MC();
 
-    @Override
+   @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        choice_Digits.setItems(digits);
-        choice_Digits.setValue("1000");
-        choice_Points.setItems(points);
-        choice_Points.setValue("100000");
+        //choice_Digits.setItems(digits);
+        //choice_Digits.setValue("1000");
     }
 
     @FXML
@@ -74,17 +77,10 @@ public class Digits implements Initializable {
     public void benchmarkGaussLegendre(ActionEvent event) throws IOException, InterruptedException {
         paw.setText("Loading...");
 
-        int digits;
-        String choice=choice_Digits.getValue();
-        if(choice.equals("1000"))
-            digits=1000;
-        else if(choice.equals("5000"))
-            digits=5000;
-        else
-            digits=10000;
-
+        int digits = Integer.parseInt(no_of_digits.getText().toString());
 
         long miliseconds=bench.run(digits);
+
         paw.setText(Long.toString(miliseconds));
         paw.setFont(new Font("Cooper Black",30));
         paw.setAlignment(Pos.CENTER);
@@ -93,14 +89,10 @@ public class Digits implements Initializable {
     @FXML
     public void benchmarkMonteCarlo(ActionEvent event) throws IOException, InterruptedException {
 
-        int points;
-        String choice= choice_Points.getValue();
-        if(choice.equals("100000"))
-            points=100000;
-        else if(choice.equals("1000000"))
-            points=1000000;
-        else
-            points=999999999;
+
+        int points = Integer.parseInt(no_of_points.getText().toString());
+
+
 
         long miliseconds=benchMC.run(points);
         paw.setText(Long.toString(miliseconds));

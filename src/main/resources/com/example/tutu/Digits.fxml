@@ -2,14 +2,15 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="full" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tutu.Digits">
    <children>
@@ -19,17 +20,17 @@
             <Font name="Cooper Black" size="48.0" />
          </font>
       </Label>
-      <Button layoutX="709.0" layoutY="439.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
+      <Button layoutX="737.0" layoutY="350.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="120.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="402.0" layoutY="439.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
+      <Button layoutX="346.0" layoutY="350.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="120.0" styleClass="round2" text="Floating Point" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="button_MC" layoutX="611.0" layoutY="354.0" mnemonicParsing="false" onAction="#benchmarkMonteCarlo" onMouseEntered="#describeMC" onMouseExited="#clearMC" prefHeight="86.0" prefWidth="98.0" styleClass="round" text="Monte Carlo" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="button_MC" layoutX="620.0" layoutY="250.0" mnemonicParsing="false" onAction="#benchmarkMonteCarlo" onMouseEntered="#describeMC" onMouseExited="#clearMC" prefHeight="101.0" prefWidth="120.0" styleClass="round" text="Monte Carlo" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
@@ -52,7 +53,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button_Start" alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="650.0" mnemonicParsing="false" onAction="#stop" prefHeight="37.0" prefWidth="159.0" styleClass="cuteButton" text="Stop">
+      <Button fx:id="button_Start" alignment="CENTER" contentDisplay="CENTER" layoutX="521.0" layoutY="690.0" mnemonicParsing="false" onAction="#stop" prefHeight="37.0" prefWidth="159.0" styleClass="cuteButton" text="Stop">
          <font>
             <Font name="Cooper Black" size="24.0" />
          </font>
@@ -67,23 +68,22 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="label_GL" layoutX="23.0" layoutY="191.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="label_GL" layoutX="14.0" layoutY="265.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="26.0" />
          </font>
       </Label>
-      <Label fx:id="label_MC" layoutX="854.0" layoutY="191.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="label_MC" layoutX="860.0" layoutY="250.0" prefHeight="325.0" prefWidth="325.0" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="26.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choice_Digits" layoutX="360.0" layoutY="270.0" prefHeight="34.0" prefWidth="225.0" />
-      <Label layoutX="500.0" layoutY="444.0" prefHeight="200.0" prefWidth="202.0" styleClass="round2" text="Choose your mewthod" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true">
+      <Label layoutX="461.0" layoutY="428.0" prefHeight="280.0" prefWidth="280.0" styleClass="round2" text="Choose your mewthod" textAlignment="CENTER" textFill="#f9d5a7" wrapText="true" AnchorPane.bottomAnchor="92.0">
          <font>
             <Font name="Cooper Black" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="button_GL" layoutX="492.0" layoutY="353.0" mnemonicParsing="false" onAction="#benchmarkGaussLegendre" onMouseEntered="#describeGL" onMouseExited="#clearGL" prefHeight="86.0" prefWidth="98.0" styleClass="round" text="Gauss- Legendre" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="button_GL" layoutX="458.0" layoutY="250.0" mnemonicParsing="false" onAction="#benchmarkGaussLegendre" onMouseEntered="#describeGL" onMouseExited="#clearGL" prefHeight="101.0" prefWidth="120.0" styleClass="round" text="Gauss- Legendre" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="16.0" />
          </font>
@@ -98,22 +98,30 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="472.0" layoutY="196.0" prefHeight="74.0" prefWidth="257.0" text="Choose the number of computed digits:" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="57.0" layoutY="39.0" prefHeight="101.0" prefWidth="309.0" text="For Gauss-Legendre: type a number of computed digits" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cooper Black" size="26.0" />
          </font>
       </Label>
       <AnchorPane layoutX="971.0" layoutY="563.0" prefHeight="456.0" prefWidth="226.0" rotate="55.3" styleClass="back" />
-      <ImageView fx:id="cat" fitHeight="286.0" fitWidth="382.0" layoutX="409.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cat" fitHeight="389.0" fitWidth="519.0" layoutX="342.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/loading.gif" />
          </image>
       </ImageView>
-      <Label fx:id="paw" layoutX="556.0" layoutY="519.0" prefHeight="50.0" prefWidth="90.0" text="Choose your meowthod" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="paw" layoutX="529.0" layoutY="482.0" prefHeight="86.0" prefWidth="144.0" text="Choose your meowthod" textAlignment="CENTER" wrapText="true">
          <font>
-            <Font name="Cooper Black" size="14.0" />
+            <Font name="Cooper Black" size="17.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choice_Points" layoutX="597.0" layoutY="270.0" prefHeight="34.0" prefWidth="225.0" />
+      <TextField fx:id="no_of_points" layoutX="910.0" layoutY="162.0" prefHeight="25.0" prefWidth="195.0" />
+      <Label layoutX="853.0" layoutY="39.0" prefHeight="101.0" prefWidth="309.0" text="For MonteCarlo: type number of computed points" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Cooper Black" size="26.0" />
+         </font>
+      </Label>
+      <Text layoutX="918.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="( between 10000 and 999999999 )" />
+      <TextField fx:id="no_of_digits" layoutX="108.0" layoutY="162.0" prefHeight="25.0" prefWidth="195.0" />
+      <Text layoutX="138.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="( between 1000 and 60000 )" textAlignment="CENTER" />
    </children>
 </AnchorPane>
