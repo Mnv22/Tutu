@@ -18,6 +18,7 @@ public class TestCPUDigitsOfPiMC {
         IBenchmark bench= new CPUDigitsOfPiMC();
         TimeUnit unit= TimeUnit.Mili;
 
+
         int iterations=10;
         final int parameter= 100000000;
         bench.initialize(parameter);
@@ -33,6 +34,8 @@ public class TestCPUDigitsOfPiMC {
             log.write("Run: ", i);
             log.writeTime(" finished in ", time, unit);
         }
+
+
         log.writeTime("Average time: ", timer.stop()/iterations, TimeUnit.Mili);
         log.close();
         bench.clean();
